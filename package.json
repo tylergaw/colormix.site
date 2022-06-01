@@ -1,0 +1,29 @@
+{
+  "name": "colormix.site",
+  "version": "1.0.0",
+  "description": "Visualize the CSS color-mix function.",
+  "main": "index.js",
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylergaw/colormix.site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tylergaw/colormix.site/issues"
+  },
+  "homepage": "https://www.colormix.site",
+  "keywords": [
+    "color-mix",
+    "css",
+    "astro"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "astro": "1.0.0-beta.38"
+  }
+}
