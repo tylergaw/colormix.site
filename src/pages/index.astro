@@ -1,1 +1,55 @@
+---
+const colorSpaces = [
+  "srgb",
+  "srgb-linear",
+  "lab",
+  "oklab",
+  "xyz",
+  "yxz-d50",
+  "xyz-d65",
+  "hsl",
+  "hwb",
+  "lch",
+  "oklch"
+];
+---
+
 <h1>Colormix.site</h1>
+<p>Visualize the CSS color-mix function</p>
+
+<form>
+  <div>
+    <label for="colorspace">Colorspace</label>
+    <select id="colorspace">
+      {colorSpaces.map(space => <option value={space}>{space}</option>)}
+    </select>
+  </div>
+
+  <div>
+    <div>
+      <label for="color-input-1">Color 1</label>
+      <div>
+        <input id="color-input-1" type="text" />
+        <input type="color" />
+      </div>
+    </div>
+    
+    <div>
+      <label for="color-input-1-percent">Color 1 Percentage</label>
+      <div>
+        <input id="color-input-1-percent" type="text" />
+        <input type="range" min="0" max="100" />
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label for="color-2">Color 2</label>
+    <input type="color" />
+    <input type="range" min="0" max="100" />
+  </div>
+
+  <div>
+    Output: <code>color-mix(in lab, green, red 10%)</code>
+  </div>
+</form>
