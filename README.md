@@ -1,10 +1,17 @@
-# colormix.site
+# [colormix.site](https://www.colormix.site) [![Netlify Status](https://api.netlify.com/api/v1/badges/375eb780-e886-40ed-bbb1-d47ec261388f/deploy-status)](https://app.netlify.com/sites/color-mix-site/deploys)
 
-Visualize the CSS [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) function.
+A site to visualize the CSS [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) function.
 
-### Local setup
+- Production: [colormix.site](https://www.colormix.site)
+- Staging: Every pull request gets a preview deploy URL
 
-This is a static site built with [Astro](https://astro.build/) hosted on Netlify
+## Technology overview
+
+- This is a static site built with [Astro](https://astro.build/)
+- Uses React
+- Hosted on Netlify
+
+## Local setup
 
 **Install dependencies**
 
@@ -12,14 +19,28 @@ This is a static site built with [Astro](https://astro.build/) hosted on Netlify
 yarn
 ```
 
-**Run local server**
+**Start development server**
 
 ```
 yarn start
 ```
 
+The site will be available at [http://localhost:3000](http://localhost:3000)
+
 **Build for production**
+
+To build the app for production to the `dist` directory. This command generates static content into the `dist` directory and can be served using any static content hosting service.
 
 ```
 yarn build
 ```
+
+## Deployment
+
+### To production
+
+This site is hosted on Netlify. Anything merged into the `main` branch is deployed to production.
+
+### To staging
+
+This site uses Netlify preview builds. To see any branch in a live environment, push the branch to the remote and open a pull request.
