@@ -1,7 +1,7 @@
 ---
 import Base from "@layouts/Base.astro";
 import Banner from "@components/Banner.astro";
-import ColorInput from "@components/ColorInput.astro";
+import ColorInput from "@components/ColorInput.tsx";
 import ColorSpaceInput from "@components/ColorSpaceInput.astro";
 import ColorOutput from "@components/ColorOutput.astro";
 ---
@@ -9,7 +9,7 @@ import ColorOutput from "@components/ColorOutput.astro";
 <Base>
   <Banner />
   <ColorSpaceInput />
-  <ColorInput key={1} />
-  <ColorInput key={2} />
+  <ColorInput id={1} client:visible />
+  <ColorInput id={2} initColor="#db2522" client:visible />
   <ColorOutput />
 </Base>
