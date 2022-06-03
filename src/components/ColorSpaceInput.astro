@@ -1,0 +1,22 @@
+---
+const colorSpaces: string[] = [
+  "srgb",
+  "srgb-linear",
+  "lab",
+  "oklab",
+  "xyz",
+  "yxz-d50",
+  "xyz-d65",
+  "hsl",
+  "hwb",
+  "lch",
+  "oklch",
+];
+---
+
+<div>
+  <label for="colorspace">Colorspace</label>
+  <select id="colorspace">
+    {colorSpaces.map(space => <option value={space}>{space}</option>)}
+  </select>
+</div>

@@ -1,0 +1,25 @@
+---
+export interface Props {
+  key: number;
+}
+
+const { key } = Astro.props as Props;
+---
+
+<div>
+  <div>
+    <label for={`color-input-${key}`}>Color {key}</label>
+    <div>
+      <input id={`color-input-${key}`} type="text" />
+      <input type="color" />
+    </div>
+  </div>
+  
+  <div>
+    <label for={`color-input-${key}-percent`}>Color {key} Percentage</label>
+    <div>
+      <input id={`color-input-${key}-percent`} type="text" />
+      <input type="range" min="0" max="100" />
+    </div>
+  </div>
+</div>
