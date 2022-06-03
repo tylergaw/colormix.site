@@ -28,6 +28,8 @@
     "astro": "1.0.0-beta.40"
   },
   "dependencies": {
+    "@nanostores/preact": "0.1.3",
+    "nanostores": "0.5.12",
     "preact": "10.7.3"
   }
 }
