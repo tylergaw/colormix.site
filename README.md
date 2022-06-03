@@ -8,7 +8,7 @@ A site to visualize the CSS [`color-mix`](https://developer.mozilla.org/en-US/do
 ## Technology overview
 
 - This is a static site built with [Astro](https://astro.build/)
-- Uses React
+- Uses [Preact](https://preactjs.com)
 - Hosted on Netlify
 
 ## Local setup
