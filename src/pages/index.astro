@@ -3,13 +3,13 @@ import Base from "@layouts/Base.astro";
 import Banner from "@components/Banner.astro";
 import ColorInput from "@components/ColorInput.tsx";
 import ColorSpaceInput from "@components/ColorSpaceInput.astro";
-import ColorOutput from "@components/ColorOutput.astro";
+import ColorOutput from "@components/ColorOutput.tsx";
 ---
 
 <Base>
   <Banner />
   <ColorSpaceInput />
-  <ColorInput id={1} client:visible />
-  <ColorInput id={2} initColor="#db2522" client:visible />
-  <ColorOutput />
+  <ColorInput position={1} client:visible />
+  <ColorInput position={2} initColor="#db2522" client:visible />
+  <ColorOutput client:visible />
 </Base>
