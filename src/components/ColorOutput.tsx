@@ -1,3 +1,4 @@
+import ColorSpaceInput from "@components/ColorSpaceInput";
 import { FunctionComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import store, { initialState as IState, IColor } from "../store.ts";
@@ -34,6 +35,8 @@ const ColorOutput: FunctionComponent = () => {
 
   return (
     <div style={{ backgroundColor: colorMixSnippet, padding: "2rem" }}>
+      <ColorSpaceInput />
+
       <input
         style={{ display: "block", width: "100%" }}
         type="text"
