@@ -33,8 +33,8 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
       <div>
         <label for={`color-input-${position}`}>Color {position}</label>
         <div>
-          <input id={`color-input-${position}`} type="text" value={color} />
           <input type="color" onInput={onColorPickerInput} value={color} />
+          <input id={`color-input-${position}`} type="text" value={color} />
         </div>
       </div>
 
