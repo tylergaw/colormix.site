@@ -1,14 +1,14 @@
 import { map } from "nanostores";
 
-interface Color {
+export interface IColor {
   value: string;
   percentage?: number;
 }
 
-interface InitialState {
+export interface InitialState {
   colorSpace: string;
-  1: Color;
-  2: Color;
+  1: IColor;
+  2: IColor;
 }
 
 const store = map<InitialState>({
