@@ -7,7 +7,8 @@ const initialState = store.get();
 
 const buildColor = (color: IColor): string => {
   const { value, percentage } = color;
-  return `${value}${percentage !== null ? ` ${percentage}%` : ""}`;
+  const showPercentage = percentage !== null && percentage > 0;
+  return `${value}${showPercentage ? ` ${percentage}%` : ""}`;
 };
 
 const buildSnippet = (state: IState): string => {
