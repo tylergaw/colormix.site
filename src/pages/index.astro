@@ -5,9 +5,21 @@ import ColorInput from "@components/ColorInput.tsx";
 import ColorOutput from "@components/ColorOutput.tsx";
 ---
 
+<style>
+  .inputs-container {
+    display: flex;
+    flex-direction: column;
+    flex: 0.75;
+  }
+</style>
+
 <Base>
   <Banner />
-  <ColorInput position={1} client:visible />
-  <ColorInput position={2} initColor="#db2522" client:visible />
-  <ColorOutput client:visible />
+  <main>
+    <div class="inputs-container">
+      <ColorInput position={1} client:visible />
+      <ColorInput position={2} client:visible />
+    </div>
+    <ColorOutput client:visible />
+  </main>
 </Base>

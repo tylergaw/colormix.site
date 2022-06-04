@@ -29,7 +29,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
   };
 
   return (
-    <div style={{ backgroundColor: color }}>
+    <div style={{ backgroundColor: color, flex: 1 }}>
       <div>
         <label for={`color-input-${position}`}>Color {position}</label>
         <div>
