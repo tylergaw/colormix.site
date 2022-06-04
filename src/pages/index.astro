@@ -6,10 +6,22 @@ import ColorOutput from "@components/ColorOutput.tsx";
 ---
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   .inputs-container {
     display: flex;
     flex-direction: column;
     flex: 0.75;
+  }
+
+  @media (min-width: 900px) {
+    main {
+      flex-direction: row;
+    }
   }
 </style>
 
