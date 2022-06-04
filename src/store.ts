@@ -28,12 +28,12 @@ export const colorSpaces: string[] = [
 const store = map<InitialState>({
   colorSpace: "lab",
   1: {
-    value: "blue",
-    percentage: null,
+    value: "#e56400",
+    percentage: 50,
   },
   2: {
-    value: "orange",
-    percentage: 10,
+    value: "#b15aba",
+    percentage: 50,
   },
 });
 
