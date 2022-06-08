@@ -35,7 +35,7 @@ const ColorOutput: FunctionComponent = () => {
   });
 
   return (
-    <div style={{ backgroundColor: colorMixSnippet, flex: 1, padding: "2rem" }}>
+    <div style={{ backgroundColor: colorMixSnippet, flex: 1 }}>
       <ColorSpaceInput />
 
       <input
