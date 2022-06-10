@@ -8,6 +8,22 @@ body {
 }
 
 body {
+  --bg-size: 16px;
+  --bg-size-half: calc(var(--bg-size) / 2);
+  --bg-color-light: #eceff1;
+  --bg-color-dark: #ccc;
+  background-color: var(--bg-color-light);
+  background-size: var(--bg-size) var(--bg-size);
+  background-position: var(--bg-size-half) var(--bg-size-half),
+    calc(var(--bg-size-half) * -1) 0, 0 0, 0 var(--bg-size-half);
+  background-image: linear-gradient(
+      45deg,
+      var(--bg-color-dark) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, var(--bg-color-dark) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--bg-color-dark) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--bg-color-dark) 75%);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
