@@ -53,7 +53,11 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
           Color {position} Percentage
         </label>
         <div>
-          <input id={`color-input-${position}-percent`} type="text" />
+          <input
+            id={`color-input-${position}-percent`}
+            type="text"
+            value={percentage}
+          />
           <input
             type="range"
             name="percentage"
