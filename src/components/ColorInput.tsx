@@ -8,6 +8,8 @@ export interface IProps {
 
 const initialState = store.get();
 
+const isHex = (str) => /^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(str);
+
 const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
   const [isListening, setIsListening] = useState(false);
   const [state, setState] = useState(initialState);
@@ -25,6 +27,16 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
 
   const updateStore = (e: Event) => {
     const { name, value: nextValue } = e.target as HTMLInputElement;
+
+    // FIXME: Working here
+    if (name === "color-input") {
+      if (!isHex(nextValue)) {
+        return false;
+      }
+
+      console.log(nextValue, isHex(nextValue));
+    }
+
     const nextState = {
       value: color,
       percentage,
@@ -44,7 +56,13 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
             onInput={updateStore}
             value={color}
           />
-          <input id={`color-input-${position}`} type="text" value={color} />
+          <input
+            name="color-input"
+            onInput={updateStore}
+            id={`color-input-${position}`}
+            type="text"
+            value={color}
+          />
         </div>
       </div>
 
