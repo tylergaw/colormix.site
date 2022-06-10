@@ -23,9 +23,14 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
     }
   });
 
-  const onColorPickerInput = (e: Event) => {
-    const nextValue = (e.target as HTMLInputElement).value;
-    store.setKey(position, { value: nextValue, percentage });
+  const updateStore = (e: Event) => {
+    const { name, value: nextValue } = e.target as HTMLInputElement;
+    const nextState = {
+      value: color,
+      percentage,
+      ...{ [name]: nextValue },
+    };
+    store.setKey(position, nextState);
   };
 
   return (
@@ -33,7 +38,12 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
       <div>
         <label for={`color-input-${position}`}>Color {position}</label>
         <div>
-          <input type="color" onInput={onColorPickerInput} value={color} />
+          <input
+            type="color"
+            name="value"
+            onInput={updateStore}
+            value={color}
+          />
           <input id={`color-input-${position}`} type="text" value={color} />
         </div>
       </div>
@@ -44,7 +54,13 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
         </label>
         <div>
           <input id={`color-input-${position}-percent`} type="text" />
-          <input type="range" min="0" max="100" />
+          <input
+            type="range"
+            name="percentage"
+            onInput={updateStore}
+            min="0"
+            max="100"
+          />
         </div>
       </div>
     </div>
