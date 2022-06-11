@@ -11,6 +11,8 @@ export const isHex = (str: string): boolean =>
  * If a given hex string is 3 digits, convert it to six.
  * This also returns the "#" because it's designed for use with input[type=color]
  *
+ * Thank you to https://gomakethings.com/converting-a-color-from-a-three-digit-hexcolor-to-a-six-digit-hexcolor-with-vanilla-js/
+ *
  * @param str
  * @returns string
  */
@@ -29,7 +31,11 @@ export const enforceHex6 = (str: string): string => {
   return str;
 };
 
-// Found out https://stackoverflow.com/a/1484514
+/**
+ * Generate a random 6 digit hex color, including the "#"
+ * Thank you to https://stackoverflow.com/a/1484514
+ * @returns string
+ */
 export const getRandomHexColor = (): string => {
   const letters = "0123456789ABCDEF";
   let color = "#";
