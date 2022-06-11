@@ -1,7 +1,8 @@
 import ColorSpaceInput from "@components/ColorSpaceInput";
 import { FunctionComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
-import store, { initialState as IState, IColor } from "../store.ts";
+import store, { initialState as IState, IColor } from "../../store.ts";
+import styles from "./styles.module.css";
 
 const initialState = store.get();
 
@@ -46,7 +47,10 @@ const ColorOutput: FunctionComponent = () => {
   });
 
   return (
-    <div style={{ backgroundColor: snippetUse, flex: 1 }}>
+    <div
+      class={styles.container}
+      style={{ backgroundColor: snippetUse, flex: 1 }}
+    >
       <ColorSpaceInput />
 
       <input

@@ -1,7 +1,8 @@
 import { FunctionComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import { enforceHex6, isHex } from "@utils/color";
-import store from "../store.ts";
+import store from "../../store.ts";
+import styles from "./styles.module.css";
 
 export interface IProps {
   position: number;
@@ -44,8 +45,8 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
   };
 
   return (
-    <div className="color-input" style={{ backgroundColor: color, flex: 1 }}>
-      <div className="color-input-controls">
+    <div class={styles.container} style={{ backgroundColor: color, flex: 1 }}>
+      <div class={styles.controls}>
         <div>
           <label className="visually-hidden" for={`color-input-${position}`}>
             Color {position}

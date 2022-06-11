@@ -58,14 +58,3 @@ body {
 [type="number"]:focus {
   --color-bg-alpha: 1;
 }
-
-.color-input {
-  align-items: flex-end;
-  display: flex;
-}
-
-.color-input-controls {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1.25rem;
-}

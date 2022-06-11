@@ -1,0 +1,10 @@
+.container {
+  align-items: flex-end;
+  display: flex;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.25rem;
+}
