@@ -4,7 +4,8 @@
     // Have nice things
     "paths": {
       "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@utils/*": ["src/utils/*"]
     },
     // Preact specific settings
     "jsx": "react-jsx",
