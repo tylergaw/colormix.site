@@ -70,14 +70,17 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
         </label>
         <div>
           <input
-            id={`color-input-${position}-percent`}
-            type="text"
+            type="number"
+            name="percentage"
+            onInput={updateStore}
             value={percentage}
+            id={`color-input-${position}-percent`}
           />
           <input
             type="range"
             name="percentage"
             onInput={updateStore}
+            value={percentage}
             min="0"
             max="100"
           />
