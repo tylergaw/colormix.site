@@ -47,7 +47,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
   return (
     <div class={styles.container} style={{ backgroundColor: color, flex: 1 }}>
       <div class={styles.controls}>
-        <div>
+        <div class={styles.control}>
           <label className="visually-hidden" for={`color-input-${position}`}>
             Color {position}
           </label>
@@ -68,7 +68,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
           </div>
         </div>
 
-        <div>
+        <div class={styles.control}>
           <label
             className="visually-hidden"
             for={`color-input-${position}-percent`}

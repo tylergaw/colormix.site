@@ -43,7 +43,7 @@ body {
 
 [type="text"],
 [type="number"] {
-  --color-bg-alpha: 0.35;
+  --color-bg-alpha: 0.4;
   appearance: none;
   background-color: rgba(255, 255, 255, var(--color-bg-alpha));
   border: 1px solid black;
@@ -51,7 +51,13 @@ body {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
     monospace;
   font-size: 1.125rem;
-  padding: 0.5rem;
+  padding: 0.6em;
+  transition: background-color 0.12s ease;
+}
+
+[type="text"]:hover,
+[type="number"]:hover {
+  --color-bg-alpha: 0.5;
 }
 
 [type="text"]:focus,

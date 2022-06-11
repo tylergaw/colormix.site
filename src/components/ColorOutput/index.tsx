@@ -47,18 +47,11 @@ const ColorOutput: FunctionComponent = () => {
   });
 
   return (
-    <div
-      class={styles.container}
-      style={{ backgroundColor: snippetUse, flex: 1 }}
-    >
-      <ColorSpaceInput />
-
-      <input
-        style={{ display: "block", width: "100%" }}
-        type="text"
-        value={snippetDisplay}
-        readonly
-      />
+    <div class={styles.container} style={{ backgroundColor: snippetUse }}>
+      <input class={styles.input} type="text" value={snippetDisplay} readonly />
+      <div class={styles.spaceSelect}>
+        <ColorSpaceInput />
+      </div>
     </div>
   );
 };

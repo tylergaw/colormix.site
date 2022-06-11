@@ -1,3 +1,20 @@
 .container {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
   padding: 1.25rem;
+}
+
+.spaceSelect {
+  width: 100%;
+}
+
+.input {
+  display: block;
+  font-size: 1.375rem;
+  margin: 0 auto;
+  max-width: 50ch;
+  text-align: center;
+  width: 100%;
 }
