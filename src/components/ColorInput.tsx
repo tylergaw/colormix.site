@@ -44,46 +44,53 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
   };
 
   return (
-    <div style={{ backgroundColor: color, flex: 1 }}>
-      <div>
-        <label for={`color-input-${position}`}>Color {position}</label>
+    <div className="color-input" style={{ backgroundColor: color, flex: 1 }}>
+      <div className="color-input-controls">
         <div>
-          <input
-            type="color"
-            name="value"
-            onInput={updateStore}
-            value={enforceHex6(color)}
-          />
-          <input
-            type="text"
-            name="value"
-            onInput={updateStore}
-            value={color}
-            id={`color-input-${position}`}
-          />
+          <label className="visually-hidden" for={`color-input-${position}`}>
+            Color {position}
+          </label>
+          <div>
+            <input
+              type="color"
+              name="value"
+              onInput={updateStore}
+              value={enforceHex6(color)}
+            />
+            <input
+              type="text"
+              name="value"
+              onInput={updateStore}
+              value={color.toUpperCase()}
+              id={`color-input-${position}`}
+            />
+          </div>
         </div>
-      </div>
 
-      <div>
-        <label for={`color-input-${position}-percent`}>
-          Color {position} Percentage
-        </label>
         <div>
-          <input
-            type="number"
-            name="percentage"
-            onInput={updateStore}
-            value={percentage}
-            id={`color-input-${position}-percent`}
-          />
-          <input
-            type="range"
-            name="percentage"
-            onInput={updateStore}
-            value={percentage}
-            min="0"
-            max="100"
-          />
+          <label
+            className="visually-hidden"
+            for={`color-input-${position}-percent`}
+          >
+            Color {position} Percentage
+          </label>
+          <div>
+            <input
+              type="number"
+              name="percentage"
+              onInput={updateStore}
+              value={percentage}
+              id={`color-input-${position}-percent`}
+            />
+            <input
+              type="range"
+              name="percentage"
+              onInput={updateStore}
+              value={percentage}
+              min="0"
+              max="100"
+            />
+          </div>
         </div>
       </div>
     </div>

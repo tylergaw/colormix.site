@@ -25,7 +25,9 @@ const ColorSpaceInput: FunctionComponent = () => {
 
   return (
     <div>
-      <label for="colorspace">Colorspace</label>
+      <label for="colorspace" className="visually-hidden">
+        Colorspace
+      </label>
       <select id="colorspace" onChange={onChange} value={state.colorSpace}>
         {colorSpaces.map((space) => (
           <option value={space}>{space}</option>

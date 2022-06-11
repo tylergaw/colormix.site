@@ -28,3 +28,44 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
 }
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+[type="text"],
+[type="number"] {
+  --color-bg-alpha: 0.35;
+  appearance: none;
+  background-color: rgba(255, 255, 255, var(--color-bg-alpha));
+  border: 1px solid black;
+  border-radius: 6px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+  font-size: 1.125rem;
+  padding: 0.5rem;
+}
+
+[type="text"]:focus,
+[type="number"]:focus {
+  --color-bg-alpha: 1;
+}
+
+.color-input {
+  align-items: flex-end;
+  display: flex;
+}
+
+.color-input-controls {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.25rem;
+}

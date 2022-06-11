@@ -8,7 +8,7 @@ const initialState = store.get();
 const buildColor = (color: IColor, forDisplay?: boolean): string => {
   const { value, percentage } = color;
   const showPercentage = forDisplay && percentage < 1 ? false : true;
-  return `${value}${showPercentage ? ` ${percentage}%` : ""}`;
+  return `${value.toUpperCase()}${showPercentage ? ` ${percentage}%` : ""}`;
 };
 
 interface ISnippet {
