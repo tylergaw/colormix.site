@@ -28,3 +28,13 @@ export const enforceHex6 = (str: string): string => {
 
   return str;
 };
+
+// Found out https://stackoverflow.com/a/1484514
+export const getRandomHexColor = (): string => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
