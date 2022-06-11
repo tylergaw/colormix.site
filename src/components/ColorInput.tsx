@@ -1,5 +1,6 @@
 import { FunctionComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
+import { enforceHex6, isHex } from "@utils/color";
 import store from "../store.ts";
 
 export interface IProps {
@@ -7,8 +8,6 @@ export interface IProps {
 }
 
 const initialState = store.get();
-
-const isHex = (str) => /^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(str);
 
 const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
   const [isListening, setIsListening] = useState(false);
@@ -26,15 +25,14 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
   });
 
   const updateStore = (e: Event) => {
-    const { name, value: nextValue } = e.target as HTMLInputElement;
+    let { name, value: nextValue } = e.target as HTMLInputElement;
 
-    // FIXME: Working here
-    if (name === "color-input") {
+    // We need to guard a here to allow for typing in a color value. We only
+    // want to update the store when we hit a valid 3 or 6 digit hex
+    if (name === "value") {
       if (!isHex(nextValue)) {
         return false;
       }
-
-      console.log(nextValue, isHex(nextValue));
     }
 
     const nextState = {
@@ -54,14 +52,14 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
             type="color"
             name="value"
             onInput={updateStore}
-            value={color}
+            value={enforceHex6(color)}
           />
           <input
-            name="color-input"
-            onInput={updateStore}
-            id={`color-input-${position}`}
             type="text"
+            name="value"
+            onInput={updateStore}
             value={color}
+            id={`color-input-${position}`}
           />
         </div>
       </div>
