@@ -48,6 +48,11 @@ const ColorOutput: FunctionComponent = () => {
 
   return (
     <div class={styles.container} style={{ backgroundColor: snippetUse }}>
+      <div class={styles.noSupport}>
+        <strong>This browser doesn't support color-mix yet.</strong> You can
+        still generate the CSS snippet, but you won't see the result of the
+        mixed colors.
+      </div>
       <input class={styles.input} type="text" value={snippetDisplay} readonly />
       <div class={styles.spaceSelect}>
         <ColorSpaceInput />
