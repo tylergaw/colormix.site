@@ -16,11 +16,13 @@
     hsla(0, 0%, 100%, 0.15) 0,
     hsla(0, 0%, 100%, 0.15) 80px
   );
-  left: 0;
+  border: 1px solid #000;
+  border-radius: 6px;
+  left: 1.25rem;
   padding: 1.25rem;
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 1.25rem;
+  width: calc(100% - 2.5rem);
 }
 
 @supports (background: color-mix(in lab, #fff, #000)) {
