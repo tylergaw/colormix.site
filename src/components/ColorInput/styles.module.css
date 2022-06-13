@@ -13,3 +13,40 @@
 .control {
   flex: 1;
 }
+
+.fieldContainer {
+  --color-bg-alpha: 0.4;
+  background-color: rgba(255, 255, 255, var(--color-bg-alpha));
+  border: 1px solid black;
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+}
+
+.fieldContainer:focus-within {
+  --color-bg-alpha: 1;
+}
+
+.colorInputContainer {
+  --size: 2.375rem;
+  aspect-ratio: 1;
+  /* height: var(--size); */
+  padding: 0.6em;
+  position: relative;
+  width: var(--size);
+}
+
+.colorInputContainer input {
+  cursor: pointer;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.colorInputContainer img {
+  display: block;
+  height: auto;
+  pointer-events: none;
+  top: 0;
+  width: 100%;
+}

@@ -48,16 +48,19 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
     <div class={styles.container} style={{ backgroundColor: color, flex: 1 }}>
       <div class={styles.controls}>
         <div class={styles.control}>
-          <label className="visually-hidden" for={`color-input-${position}`}>
+          <label class="visually-hidden" for={`color-input-${position}`}>
             Color {position}
           </label>
-          <div>
-            <input
-              type="color"
-              name="value"
-              onInput={updateStore}
-              value={enforceHex6(color)}
-            />
+          <div class={styles.fieldContainer}>
+            <div class={styles.colorInputContainer}>
+              <img src="/images/colorwheel.svg" alt="Colorwheel icon" />
+              <input
+                type="color"
+                name="value"
+                onInput={updateStore}
+                value={enforceHex6(color)}
+              />
+            </div>
             <input
               type="text"
               name="value"
