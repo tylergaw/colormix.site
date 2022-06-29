@@ -42,7 +42,8 @@ body {
 }
 
 [type="text"],
-[type="number"] {
+[type="number"],
+select {
   appearance: none;
   background-color: transparent;
   border: none;
