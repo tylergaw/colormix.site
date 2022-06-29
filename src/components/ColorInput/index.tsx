@@ -62,6 +62,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
               />
             </div>
             <input
+              class={styles.colorTextInput}
               type="text"
               name="value"
               onInput={updateStore}
