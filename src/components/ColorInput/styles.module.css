@@ -23,13 +23,11 @@
   border-radius: 6px;
   box-shadow: 0 0 0 2px var(--color-shadow);
   display: grid;
-  
   overflow: hidden;
 }
 
 .fieldContainer:focus-within {
   --color-bg-alpha: 1;
-  --color-border: black;
   --color-shadow: var(--color-border);
 }
 
