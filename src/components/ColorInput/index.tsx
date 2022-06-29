@@ -51,7 +51,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
           <label class="visually-hidden" for={`color-input-${position}`}>
             Color {position}
           </label>
-          <div class={styles.fieldContainer}>
+          <div class={`${styles.fieldContainer} ${styles.colorFieldContainer}`}>
             <div class={styles.colorInputContainer}>
               <img src="/images/colorwheel.svg" alt="Colorwheel icon" />
               <input
@@ -79,12 +79,15 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
           >
             Color {position} Percentage
           </label>
-          <div>
+          <div
+            class={`${styles.fieldContainer} ${styles.percentFieldContainer}`}
+          >
             <input
               type="number"
               name="percentage"
               onInput={updateStore}
               value={percentage}
+              max="100"
               id={`color-input-${position}-percent`}
             />
             <input
