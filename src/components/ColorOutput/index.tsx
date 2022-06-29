@@ -58,7 +58,7 @@ const ColorOutput: FunctionComponent = () => {
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix#browser_compatibility">
           color-mix MDN docs
         </a>{" "}
-        for details.
+        for details on browser support and how to enable feature flags.
       </div>
       <input class={styles.input} type="text" value={snippetDisplay} readonly />
       <div class={styles.spaceSelect}>
