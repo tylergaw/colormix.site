@@ -1,0 +1,28 @@
+.selectContainer {
+  --color-bg-alpha: 0.4;
+  --color-border: black;
+  --color-shadow: transparent;
+  align-items: center;
+  background-color: rgba(255, 255, 255, var(--color-bg-alpha));
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px var(--color-shadow);
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+}
+
+.selectContainer select {
+  cursor: pointer;
+  padding-right: 2rem;
+}
+
+.selectContainer:hover {
+  --color-bg-alpha: 0.5;
+}
+
+.selectContainer img {
+  pointer-events: none;
+  position: absolute;
+  right: 0.5rem;
+}

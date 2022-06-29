@@ -4,11 +4,13 @@ A site to visualize the CSS [`color-mix`](https://developer.mozilla.org/en-US/do
 
 - Production: [colormix.site](https://www.colormix.site)
 - Staging: Every pull request gets a preview deploy URL
+- Figma: [figma.com/file/X2rvL8LtTk5Cw4rxECTqdY/colormix](https://www.figma.com/file/X2rvL8LtTk5Cw4rxECTqdY/colormix)
 
 ## Technology overview
 
 - This is a static site built with [Astro](https://astro.build/)
-- Uses React
+- TypeScript (most of the time)
+- Makes use of [Preact](https://preactjs.com) and [Nano Stores](https://github.com/nanostores/nanostores)
 - Hosted on Netlify
 
 ## Local setup
@@ -27,9 +29,17 @@ yarn start
 
 The site will be available at [http://localhost:3000](http://localhost:3000)
 
+**Preview production**
+
+Do a production build and local server to mimic a production environment. Note that there's no reload when files are changed.
+
+```
+yarn preview
+```
+
 **Build for production**
 
-To build the app for production to the `dist` directory. This command generates static content into the `dist` directory and can be served using any static content hosting service.
+Generates static content into the `dist` directory that can be served using any static content hosting service.
 
 ```
 yarn build
