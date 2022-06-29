@@ -83,6 +83,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
             class={`${styles.fieldContainer} ${styles.percentFieldContainer}`}
           >
             <input
+              class={styles.percentInput}
               type="number"
               name="percentage"
               onInput={updateStore}

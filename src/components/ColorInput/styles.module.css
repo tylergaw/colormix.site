@@ -43,6 +43,7 @@
 }
 
 .colorInputContainer {
+  border-right: 1px solid black;
   display: grid;
   padding: 0.5rem;
   place-items: center;
@@ -72,4 +73,9 @@
   display: block;
   pointer-events: none;
   z-index: 2;
+}
+
+.percentInput {
+  border-radius: 0;
+  border-right: 1px solid black;
 }
