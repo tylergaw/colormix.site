@@ -4,6 +4,7 @@ A site to visualize the CSS [`color-mix`](https://developer.mozilla.org/en-US/do
 
 - Production: [colormix.site](https://www.colormix.site)
 - Staging: Every pull request gets a preview deploy URL
+- Figma: [figma.com/file/X2rvL8LtTk5Cw4rxECTqdY/colormix](https://www.figma.com/file/X2rvL8LtTk5Cw4rxECTqdY/colormix)
 
 ## Technology overview
 
