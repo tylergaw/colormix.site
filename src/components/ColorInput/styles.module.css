@@ -18,7 +18,8 @@
   --color-bg-alpha: 0.4;
   --color-border: black;
   --color-shadow: transparent;
-  background-color: rgba(255, 255, 255, var(--color-bg-alpha));
+  --color-bg: rgba(255, 255, 255, var(--color-bg-alpha));
+  background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 6px;
   box-shadow: 0 0 0 2px var(--color-shadow);
@@ -31,13 +32,12 @@
   --color-shadow: var(--color-border);
 }
 
-.colorFieldContainer {
-  grid-template-columns: 2.375rem 1fr;
+.fieldContainer input:focus {
+  outline: none;
 }
 
-.percentFieldContainer {
-  grid-template-columns: 5rem 1fr;
-  padding-right: 0.5rem;
+.colorFieldContainer {
+  grid-template-columns: 2.375rem 1fr;
 }
 
 .colorInputContainer {
@@ -63,17 +63,63 @@
   text-transform: uppercase;
 }
 
-.fieldContainer input:focus {
-  outline: none;
-}
-
 .colorInputContainer img {
   display: block;
   pointer-events: none;
   z-index: 2;
 }
 
+.percentFieldContainer {
+  background-color: transparent;
+  grid-template-columns: 5rem 1fr;
+}
+
+.percentInputContainer {
+  background-color: var(--color-bg);
+  border-right: 1px solid black;
+}
+
 .percentInput {
   border-radius: 0;
-  border-right: 1px solid black;
+  width: 100%;
+}
+
+.percentRangeContainer {
+  display: flex;
+  min-width: 100px;
+}
+
+.percentRange {
+  appearance: none;
+  background: transparent;
+  background-image: linear-gradient(var(--color-bg), var(--color-bg));
+  background-size: var(--bg-width) 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+.percentRange::-moz-range-thumb {
+  --size: 1.4rem;
+  -webkit-appearance: none;
+  background: #000;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 8px #fff, 0 0 0 2px #000;
+  cursor: grab;
+  height: var(--size);
+  width: var(--size);
+}
+
+.percentRange::-webkit-slider-thumb {
+  --size: 1.4rem;
+  -webkit-appearance: none;
+  background: #000;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 8px #fff, 0 0 0 2px #000;
+  cursor: grab;
+  height: var(--size);
+  width: var(--size);
 }

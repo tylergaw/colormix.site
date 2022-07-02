@@ -74,7 +74,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
 
         <div class={styles.control}>
           <label
-            className="visually-hidden"
+            class="visually-hidden"
             for={`color-input-${position}-percent`}
           >
             Color {position} Percentage
@@ -82,23 +82,32 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
           <div
             class={`${styles.fieldContainer} ${styles.percentFieldContainer}`}
           >
-            <input
-              class={styles.percentInput}
-              type="number"
-              name="percentage"
-              onInput={updateStore}
-              value={percentage}
-              max="100"
-              id={`color-input-${position}-percent`}
-            />
-            <input
-              type="range"
-              name="percentage"
-              onInput={updateStore}
-              value={percentage}
-              min="0"
-              max="100"
-            />
+            <div class={styles.percentInputContainer}>
+              <input
+                class={styles.percentInput}
+                type="number"
+                name="percentage"
+                onInput={updateStore}
+                value={percentage}
+                min="0"
+                max="100"
+                id={`color-input-${position}-percent`}
+              />
+            </div>
+            <div
+              class={styles.percentRangeContainer}
+              style={`--bg-width: ${percentage}%`}
+            >
+              <input
+                class={styles.percentRange}
+                type="range"
+                name="percentage"
+                onInput={updateStore}
+                value={percentage}
+                min="0"
+                max="100"
+              />
+            </div>
           </div>
         </div>
       </div>
