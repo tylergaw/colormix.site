@@ -1,8 +1,8 @@
-# [colormix.site](https://www.colormix.site) [![Netlify Status](https://api.netlify.com/api/v1/badges/375eb780-e886-40ed-bbb1-d47ec261388f/deploy-status)](https://app.netlify.com/sites/color-mix-site/deploys)
+# [colormix.style](https://www.colormix.style) [![Netlify Status](https://api.netlify.com/api/v1/badges/375eb780-e886-40ed-bbb1-d47ec261388f/deploy-status)](https://app.netlify.com/sites/color-mix-style/deploys)
 
 A site to visualize the CSS [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) function.
 
-- Production: [colormix.site](https://www.colormix.site)
+- Production: [colormix.style](https://www.colormix.style)
 - Staging: Every pull request gets a preview deploy URL
 - Figma: [figma.com/file/X2rvL8LtTk5Cw4rxECTqdY/colormix](https://www.figma.com/file/X2rvL8LtTk5Cw4rxECTqdY/colormix)
 
