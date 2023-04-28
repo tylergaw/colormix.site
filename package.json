@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/tylergaw/colormix.site/issues"
   },
-  "homepage": "https://www.colormix.site",
+  "homepage": "https://www.colormix.style",
   "keywords": [
     "color-mix",
     "css",
@@ -25,14 +25,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@astrojs/preact": "2.0.1",
-    "astro": "2.0.4",
-    "prettier": "2.8.3",
+    "@astrojs/preact": "2.1.0",
+    "astro": "2.3.2",
+    "prettier": "2.8.8",
     "prettier-plugin-astro": "0.8.0"
   },
   "dependencies": {
-    "@nanostores/preact": "0.3.1",
-    "nanostores": "0.7.1",
-    "preact": "10.11.3"
+    "@nanostores/preact": "0.4.1",
+    "nanostores": "0.8.1",
+    "preact": "10.13.2"
   }
 }
