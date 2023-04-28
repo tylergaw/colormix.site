@@ -3,15 +3,30 @@ import ColorInput from "@components/ColorInput";
 ---
 
 <style>
+  header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.4rem 1rem;
+  }
+
   h1 {
+    flex: 1;
+    font-size: 18px;
     margin: 0;
+    max-width: 200px;
+  }
+
+  .inputs {
+    display: flex;
+    flex-wrap: wrap;
   }
 </style>
 
-<header role="banner">
+<header>
   <h1>Colormix</h1>
 
-  <div class="inputs-container">
+  <div class="inputs">
     <ColorInput position={1} client:visible />
     <ColorInput position={2} client:visible />
   </div>

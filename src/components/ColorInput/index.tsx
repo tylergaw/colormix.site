@@ -57,7 +57,6 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
                 class={styles.colorInputVisual}
                 style={{ backgroundColor: color }}
               />
-              {/* NEED TO DO THIS with element <img src="/images/colorwheel.svg" alt="Colorwheel icon" /> */}
               <input
                 type="color"
                 name="value"
@@ -66,7 +65,6 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
               />
             </div>
             <input
-              class={styles.colorTextInput}
               type="text"
               name="value"
               onInput={updateStore}

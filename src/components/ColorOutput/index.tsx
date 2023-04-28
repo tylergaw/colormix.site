@@ -55,7 +55,14 @@ const ColorOutput: FunctionComponent = () => {
           <ColorSpaceInput />
         </div>
       </div>
-      <input class={styles.input} type="text" value={snippetDisplay} readonly />
+      <div class={styles.snippetContainer}>
+        <input
+          class={styles.input}
+          type="text"
+          value={snippetDisplay}
+          readonly
+        />
+      </div>
     </div>
   );
 };

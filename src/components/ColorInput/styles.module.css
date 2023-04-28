@@ -4,10 +4,8 @@
 }
 
 .controls {
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* gap: 0.625rem; */
-  /* padding: 1.25rem; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .control {
@@ -28,8 +26,6 @@
 }
 
 .fieldContainer:focus-within {
-  --color-bg-alpha: 1;
-  --color-shadow: var(--color-border);
 }
 
 .fieldContainer input:focus {
@@ -37,7 +33,8 @@
 }
 
 .colorFieldContainer {
-  grid-template-columns: 2.375rem 1fr;
+  --input-size: 1.875rem;
+  grid-template-columns: var(--input-size) 1fr;
 }
 
 .colorInputContainer {
@@ -53,31 +50,21 @@
   opacity: 0;
   padding: 0;
   position: absolute;
-  height: 100%;
-  width: 100%;
+  height: var(--input-size);
+  width: var(--input-size);
 }
 
 .colorInputVisual {
-  --size: 1.875rem;
-  background-color: red;
-  border-radius: calc(var(--size) / 2);
-  height: var(--size);
+  border-radius: calc(var(--input-size) / 2);
+  height: var(--input-size);
   position: absolute;
-  width: var(--size);
-}
-
-.colorTextInput {
-  /* text-transform: uppercase; */
+  width: var(--input-size);
 }
 
 .percentFieldContainer {
-  background-color: transparent;
-  grid-template-columns: 5rem 1fr;
 }
 
 .percentInputContainer {
-  /* background-color: var(--color-bg); */
-  /* border-right: 1px solid black; */
 }
 
 .percentInput {

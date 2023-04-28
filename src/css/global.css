@@ -58,19 +58,16 @@ select {
   background-color: transparent;
   border: none;
   border-radius: 6px;
-  /* font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace; */
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
   font-size: 1.125rem;
-  padding: 0.6em;
-  transition: background-color 0.12s ease;
+  padding: 0.5em;
 }
 
 [type="text"]:hover,
 [type="number"]:hover {
-  --color-bg-alpha: 0.5;
 }
 
 [type="text"]:focus,
 [type="number"]:focus {
-  --color-bg-alpha: 1;
 }
