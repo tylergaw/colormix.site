@@ -1,9 +1,18 @@
+---
+import ColorInput from "@components/ColorInput";
+---
+
 <style>
   h1 {
-    /* FIXME */
-    display: none;
     margin: 0;
   }
 </style>
 
-<h1>Colormix</h1>
+<header role="banner">
+  <h1>Colormix</h1>
+
+  <div class="inputs-container">
+    <ColorInput position={1} client:visible />
+    <ColorInput position={2} client:visible />
+  </div>
+</header>

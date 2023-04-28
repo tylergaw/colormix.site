@@ -1,13 +1,13 @@
 .container {
-  align-items: flex-end;
-  display: flex;
+  /* align-items: flex-end; */
+  /* display: flex; */
 }
 
 .controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.625rem;
-  padding: 1.25rem;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* gap: 0.625rem; */
+  /* padding: 1.25rem; */
 }
 
 .control {
@@ -19,10 +19,10 @@
   --color-border: black;
   --color-shadow: transparent;
   --color-bg: rgba(255, 255, 255, var(--color-bg-alpha));
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  box-shadow: 0 0 0 2px var(--color-shadow);
+  /* background-color: var(--color-bg); */
+  /* border: 1px solid var(--color-border); */
+  /* border-radius: 6px; */
+  /* box-shadow: 0 0 0 2px var(--color-shadow); */
   display: grid;
   overflow: hidden;
 }
@@ -41,9 +41,7 @@
 }
 
 .colorInputContainer {
-  border-right: 1px solid black;
   display: grid;
-  padding: 0.5rem;
   place-items: center;
   position: relative;
 }
@@ -59,14 +57,17 @@
   width: 100%;
 }
 
-.colorTextInput {
-  text-transform: uppercase;
+.colorInputVisual {
+  --size: 1.875rem;
+  background-color: red;
+  border-radius: calc(var(--size) / 2);
+  height: var(--size);
+  position: absolute;
+  width: var(--size);
 }
 
-.colorInputContainer img {
-  display: block;
-  pointer-events: none;
-  z-index: 2;
+.colorTextInput {
+  /* text-transform: uppercase; */
 }
 
 .percentFieldContainer {
@@ -75,51 +76,11 @@
 }
 
 .percentInputContainer {
-  background-color: var(--color-bg);
-  border-right: 1px solid black;
+  /* background-color: var(--color-bg); */
+  /* border-right: 1px solid black; */
 }
 
 .percentInput {
   border-radius: 0;
   width: 100%;
-}
-
-.percentRangeContainer {
-  display: flex;
-  min-width: 100px;
-}
-
-.percentRange {
-  appearance: none;
-  background: transparent;
-  background-image: linear-gradient(var(--color-bg), var(--color-bg));
-  background-size: var(--bg-width) 100%;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0 0.5rem;
-  width: 100%;
-}
-
-.percentRange::-moz-range-thumb {
-  --size: 1.4rem;
-  -webkit-appearance: none;
-  background: #000;
-  border: 0;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 8px #fff, 0 0 0 2px #000;
-  cursor: grab;
-  height: var(--size);
-  width: var(--size);
-}
-
-.percentRange::-webkit-slider-thumb {
-  --size: 1.4rem;
-  -webkit-appearance: none;
-  background: #000;
-  border: 0;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 8px #fff, 0 0 0 2px #000;
-  cursor: grab;
-  height: var(--size);
-  width: var(--size);
 }

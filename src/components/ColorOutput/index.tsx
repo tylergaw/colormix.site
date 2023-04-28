@@ -1,7 +1,8 @@
 import ColorSpaceInput from "@components/ColorSpaceInput";
+import NoSupport from "@components/NoSupport";
 import { FunctionComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
-import store, { initialState as IState, IColor } from "../../store.ts";
+import store, { InitialState as IState, IColor } from "../../store.ts";
 import styles from "./styles.module.css";
 
 const initialState = store.get();
@@ -47,23 +48,14 @@ const ColorOutput: FunctionComponent = () => {
   });
 
   return (
-    <div class={styles.container} style={{ backgroundColor: snippetUse }}>
-      <div class={styles.noSupport}>
-        <strong>
-          This browser either doesn't support color-mix yet, or needs a feature
-          flag enabled.
-        </strong>{" "}
-        You can still generate the CSS snippet, but you won't see the result of
-        the mixed colors. See{" "}
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix#browser_compatibility">
-          color-mix MDN docs
-        </a>{" "}
-        for details on browser support and how to enable feature flags.
+    <div class={styles.container}>
+      <div class={styles.colorPreview} style={{ backgroundColor: snippetUse }}>
+        <NoSupport />
+        <div class={styles.spaceSelect}>
+          <ColorSpaceInput />
+        </div>
       </div>
       <input class={styles.input} type="text" value={snippetDisplay} readonly />
-      <div class={styles.spaceSelect}>
-        <ColorSpaceInput />
-      </div>
     </div>
   );
 };

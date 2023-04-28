@@ -45,7 +45,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
   };
 
   return (
-    <div class={styles.container} style={{ backgroundColor: color, flex: 1 }}>
+    <div class={styles.container}>
       <div class={styles.controls}>
         <div class={styles.control}>
           <label class="visually-hidden" for={`color-input-${position}`}>
@@ -53,7 +53,11 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
           </label>
           <div class={`${styles.fieldContainer} ${styles.colorFieldContainer}`}>
             <div class={styles.colorInputContainer}>
-              <img src="/images/colorwheel.svg" alt="Colorwheel icon" />
+              <div
+                class={styles.colorInputVisual}
+                style={{ backgroundColor: color }}
+              />
+              {/* NEED TO DO THIS with element <img src="/images/colorwheel.svg" alt="Colorwheel icon" /> */}
               <input
                 type="color"
                 name="value"
@@ -77,7 +81,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
             class="visually-hidden"
             for={`color-input-${position}-percent`}
           >
-            Color {position} Percentage
+            Color {position} Mix Percentage
           </label>
           <div
             class={`${styles.fieldContainer} ${styles.percentFieldContainer}`}
@@ -92,20 +96,6 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
                 min="0"
                 max="100"
                 id={`color-input-${position}-percent`}
-              />
-            </div>
-            <div
-              class={styles.percentRangeContainer}
-              style={`--bg-width: ${percentage}%`}
-            >
-              <input
-                class={styles.percentRange}
-                type="range"
-                name="percentage"
-                onInput={updateStore}
-                value={percentage}
-                min="0"
-                max="100"
               />
             </div>
           </div>

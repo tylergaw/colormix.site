@@ -13,21 +13,19 @@ export interface InitialState {
 }
 
 export const colorSpaces: string[] = [
-  "srgb",
-  "srgb-linear",
-  "lab",
   "oklab",
-  "xyz",
-  "yxz-d50",
-  "xyz-d65",
-  "hsl",
-  "hwb",
   "lch",
   "oklch",
+  "hsl",
+  "hwb",
+  "lab",
+  "srgb",
+  "srgb-linear",
+  "xyz",
 ];
 
 const store = map<InitialState>({
-  colorSpace: "lab",
+  colorSpace: "oklab",
   1: {
     value: getRandomHexColor(),
     percentage: 50,
