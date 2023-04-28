@@ -1,5 +1,6 @@
 ---
 import ColorInput from "@components/ColorInput";
+import Logo from "./Logo.astro";
 ---
 
 <style>
@@ -11,8 +12,8 @@ import ColorInput from "@components/ColorInput";
   }
 
   h1 {
+    display: flex;
     flex: 1;
-    font-size: 18px;
     margin: 0;
     max-width: 200px;
   }
@@ -24,7 +25,9 @@ import ColorInput from "@components/ColorInput";
 </style>
 
 <header>
-  <h1>Colormix</h1>
+  <h1>
+    <Logo />
+  </h1>
 
   <div class="inputs">
     <ColorInput position={1} client:visible />
