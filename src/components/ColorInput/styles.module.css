@@ -1,31 +1,11 @@
 .container {
-  /* align-items: flex-end; */
-  /* display: flex; */
-}
-
-.controls {
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
 }
 
 .control {
   flex: 1;
-}
-
-.fieldContainer {
-  --color-bg-alpha: 0.4;
-  --color-border: black;
-  --color-shadow: transparent;
-  --color-bg: rgba(255, 255, 255, var(--color-bg-alpha));
-  /* background-color: var(--color-bg); */
-  /* border: 1px solid var(--color-border); */
-  /* border-radius: 6px; */
-  /* box-shadow: 0 0 0 2px var(--color-shadow); */
-  display: grid;
-  overflow: hidden;
-}
-
-.fieldContainer:focus-within {
 }
 
 .fieldContainer input:focus {
@@ -34,12 +14,12 @@
 
 .colorFieldContainer {
   --input-size: 1.875rem;
-  grid-template-columns: var(--input-size) 1fr;
+  align-items: center;
+  display: flex;
 }
 
 .colorInputContainer {
-  display: grid;
-  place-items: center;
+  margin-right: 0.25rem;
   position: relative;
 }
 
@@ -49,7 +29,6 @@
   margin: 0;
   opacity: 0;
   padding: 0;
-  position: absolute;
   height: var(--input-size);
   width: var(--input-size);
 }
@@ -59,15 +38,4 @@
   height: var(--input-size);
   position: absolute;
   width: var(--input-size);
-}
-
-.percentFieldContainer {
-}
-
-.percentInputContainer {
-}
-
-.percentInput {
-  border-radius: 0;
-  width: 100%;
 }

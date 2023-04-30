@@ -18,18 +18,18 @@
   width: 100%;
 }
 
-.input {
-  background-color: transparent;
-  display: block;
-  font-size: 1.25rem;
-  margin: 0 auto;
-  width: 100%;
+.snippetDisplay {
+  /* background-color: transparent; */
+  /* display: block; */
+  /* font-size: 1.25rem; */
+  /* margin: 0 auto; */
+  /* width: 100%; */
 }
 
-.input:focus {
+.snippetDisplay:focus {
   outline: none;
 }
 
 .snippetContainer {
-  padding: 0.5em;
+  /* padding: 0.5em; */
 }

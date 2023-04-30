@@ -56,12 +56,12 @@ body {
 select {
   appearance: none;
   background-color: transparent;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 6px;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
     monospace;
   font-size: 1.125rem;
-  padding: 0.5em;
+  padding: 0.3em;
 }
 
 [type="text"]:hover,

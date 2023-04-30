@@ -1,3 +1,5 @@
+import type { IColor } from "../../store.ts";
+
 import { FunctionComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import { enforceHex6, isHex } from "@utils/color";
@@ -36,7 +38,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
       }
     }
 
-    const nextState = {
+    const nextState: IColor = {
       value: color,
       percentage,
       ...{ [name]: nextValue },
@@ -46,56 +48,49 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
 
   return (
     <div class={styles.container}>
-      <div class={styles.controls}>
-        <div class={styles.control}>
-          <label class="visually-hidden" for={`color-input-${position}`}>
-            Color {position}
-          </label>
-          <div class={`${styles.fieldContainer} ${styles.colorFieldContainer}`}>
-            <div class={styles.colorInputContainer}>
-              <div
-                class={styles.colorInputVisual}
-                style={{ backgroundColor: color }}
-              />
-              <input
-                type="color"
-                name="value"
-                onInput={updateStore}
-                value={enforceHex6(color)}
-              />
-            </div>
+      <div class={styles.control}>
+        <label class="visually-hidden" for={`color-input-${position}`}>
+          Color {position}
+        </label>
+        <div class={`${styles.fieldContainer} ${styles.colorFieldContainer}`}>
+          <div class={styles.colorInputContainer}>
+            <div
+              class={styles.colorInputVisual}
+              style={{ backgroundColor: color }}
+            />
             <input
-              type="text"
+              type="color"
               name="value"
               onInput={updateStore}
-              value={color.toUpperCase()}
-              id={`color-input-${position}`}
+              value={enforceHex6(color)}
             />
           </div>
+          <input
+            type="text"
+            name="value"
+            onInput={updateStore}
+            value={color.toUpperCase()}
+            id={`color-input-${position}`}
+          />
         </div>
+      </div>
 
-        <div class={styles.control}>
-          <label
-            class="visually-hidden"
-            for={`color-input-${position}-percent`}
-          >
-            Color {position} Mix Percentage
-          </label>
-          <div
-            class={`${styles.fieldContainer} ${styles.percentFieldContainer}`}
-          >
-            <div class={styles.percentInputContainer}>
-              <input
-                class={styles.percentInput}
-                type="number"
-                name="percentage"
-                onInput={updateStore}
-                value={percentage}
-                min="0"
-                max="100"
-                id={`color-input-${position}-percent`}
-              />
-            </div>
+      <div class={styles.control}>
+        <label class="visually-hidden" for={`color-input-${position}-percent`}>
+          Color {position} Mix Percentage
+        </label>
+        <div class={`${styles.fieldContainer} ${styles.percentFieldContainer}`}>
+          <div class={styles.percentInputContainer}>
+            <input
+              class={styles.percentInput}
+              type="number"
+              name="percentage"
+              onInput={updateStore}
+              value={percentage}
+              min="0"
+              max="100"
+              id={`color-input-${position}-percent`}
+            />
           </div>
         </div>
       </div>

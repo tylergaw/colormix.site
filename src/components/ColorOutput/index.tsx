@@ -57,7 +57,7 @@ const ColorOutput: FunctionComponent = () => {
       </div>
       <div class={styles.snippetContainer}>
         <input
-          class={styles.input}
+          class={styles.snippetDisplay}
           type="text"
           value={snippetDisplay}
           readonly
