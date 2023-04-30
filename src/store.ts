@@ -10,6 +10,7 @@ export interface InitialState {
   colorSpace: string;
   1: IColor;
   2: IColor;
+  [key: number]: IColor;
 }
 
 export const colorSpaces: string[] = [
