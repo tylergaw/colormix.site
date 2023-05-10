@@ -49,10 +49,15 @@ const ColorOutput: FunctionComponent = () => {
 
   return (
     <div class={styles.container}>
-      <div class={styles.colorPreview} style={{ backgroundColor: snippetUse }}>
-        <NoSupport />
-        <div class={styles.spaceSelect}>
-          <ColorSpaceInput />
+      <div class={`${styles.colorPreviewContainer} checkered`}>
+        <div
+          class={styles.colorPreview}
+          style={{ backgroundColor: snippetUse }}
+        >
+          <NoSupport />
+          <div class={styles.spaceSelect}>
+            <ColorSpaceInput />
+          </div>
         </div>
       </div>
       <div class={styles.snippetContainer}>

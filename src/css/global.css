@@ -64,10 +64,10 @@ select {
   padding: 0.3em;
 }
 
-[type="text"]:hover,
+/*FIXME [type="text"]:hover,
 [type="number"]:hover {
 }
 
 [type="text"]:focus,
 [type="number"]:focus {
-}
+} */

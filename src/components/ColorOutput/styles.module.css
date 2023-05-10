@@ -5,8 +5,14 @@
   padding: 0 0.625rem;
 }
 
-.colorPreview {
+.colorPreviewContainer {
   border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+}
+
+.colorPreview {
   display: flex;
   flex-direction: column;
   flex: 1;
