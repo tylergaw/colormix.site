@@ -8,22 +8,13 @@ body {
 }
 
 body {
-  --bg-size: 16px;
-  --bg-size-half: calc(var(--bg-size) / 2);
-  --bg-color-light: #eceff1;
-  --bg-color-dark: #ccc;
-  background-color: var(--bg-color-light);
-  background-size: var(--bg-size) var(--bg-size);
-  background-position: var(--bg-size-half) var(--bg-size-half),
-    calc(var(--bg-size-half) * -1) 0, 0 0, 0 var(--bg-size-half);
-  background-image: linear-gradient(
-      45deg,
-      var(--bg-color-dark) 25%,
-      transparent 25%
-    ),
-    linear-gradient(-45deg, var(--bg-color-dark) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, var(--bg-color-dark) 75%),
-    linear-gradient(-45deg, transparent 75%, var(--bg-color-dark) 75%);
+  --bg-color-light: #f5f5f5;
+  --font-color-light: #222b2d;
+  --bg-color: var(--bg-color-light);
+  --font-color: var(--font-color-light);
+
+  background-color: var(--bg-color);
+  color: var(--font-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
@@ -41,26 +32,47 @@ body {
   white-space: nowrap;
 }
 
+.checkered {
+  --bg-size: 16px;
+  --bg-size-half: calc(var(--bg-size) / 2);
+  --bg-color-light: #eceff1;
+  --bg-color-dark: #ccc;
+  background-color: var(--bg-color-light);
+  background-size: var(--bg-size) var(--bg-size);
+  background-position: var(--bg-size-half) var(--bg-size-half),
+    calc(var(--bg-size-half) * -1) 0, 0 0, 0 var(--bg-size-half);
+  background-image: linear-gradient(
+      45deg,
+      var(--bg-color-dark) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, var(--bg-color-dark) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--bg-color-dark) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--bg-color-dark) 75%);
+}
+
 [type="text"],
 [type="number"],
 select {
+  --color-border: transparent;
   appearance: none;
   background-color: transparent;
-  border: none;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
     monospace;
   font-size: 1.125rem;
-  padding: 0.6em;
-  transition: background-color 0.12s ease;
+  padding: 0.3em;
 }
 
 [type="text"]:hover,
 [type="number"]:hover {
-  --color-bg-alpha: 0.5;
+  --color-border: #d8d8d8;
 }
 
 [type="text"]:focus,
-[type="number"]:focus {
-  --color-bg-alpha: 1;
+[type="number"]:focus,
+select:focus {
+  --color-border: #0058dc;
+  outline: 1px solid var(--color-border);
 }

@@ -1,125 +1,55 @@
 .container {
-  align-items: flex-end;
   display: flex;
-}
-
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.625rem;
-  padding: 1.25rem;
-}
-
-.control {
   flex: 1;
-}
-
-.fieldContainer {
-  --color-bg-alpha: 0.4;
-  --color-border: black;
-  --color-shadow: transparent;
-  --color-bg: rgba(255, 255, 255, var(--color-bg-alpha));
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  box-shadow: 0 0 0 2px var(--color-shadow);
-  display: grid;
-  overflow: hidden;
-}
-
-.fieldContainer:focus-within {
-  --color-bg-alpha: 1;
-  --color-shadow: var(--color-border);
-}
-
-.fieldContainer input:focus {
-  outline: none;
+  flex-wrap: wrap;
+  max-width: 460px;
 }
 
 .colorFieldContainer {
-  grid-template-columns: 2.375rem 1fr;
+  --input-size: 1.875rem;
+  align-items: center;
+  display: flex;
 }
 
-.colorInputContainer {
-  border-right: 1px solid black;
-  display: grid;
-  padding: 0.5rem;
-  place-items: center;
+.colorPickerContainer {
+  margin-right: 0.25rem;
   position: relative;
 }
 
-.colorInputContainer input {
+.colorPickerVisual {
+  border-radius: calc(var(--input-size) / 2);
+  height: var(--input-size);
+  position: absolute;
+  width: var(--input-size);
+}
+
+.colorPickerContainer input {
   appearance: none;
   cursor: pointer;
   margin: 0;
   opacity: 0;
   padding: 0;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  height: var(--input-size);
+  width: var(--input-size);
 }
 
-.colorTextInput {
-  text-transform: uppercase;
+.mixPercentControl {
+  padding-left: 1rem;
 }
 
-.colorInputContainer img {
-  display: block;
+.mixPercentField,
+.mixPercentField input {
+  position: relative;
+}
+
+.mixPercentField input {
+  text-align: right;
+  z-index: 1;
+}
+
+.mixPercentField span {
+  left: -1.2rem;
   pointer-events: none;
-  z-index: 2;
-}
-
-.percentFieldContainer {
-  background-color: transparent;
-  grid-template-columns: 5rem 1fr;
-}
-
-.percentInputContainer {
-  background-color: var(--color-bg);
-  border-right: 1px solid black;
-}
-
-.percentInput {
-  border-radius: 0;
-  width: 100%;
-}
-
-.percentRangeContainer {
-  display: flex;
-  min-width: 100px;
-}
-
-.percentRange {
-  appearance: none;
-  background: transparent;
-  background-image: linear-gradient(var(--color-bg), var(--color-bg));
-  background-size: var(--bg-width) 100%;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0 0.5rem;
-  width: 100%;
-}
-
-.percentRange::-moz-range-thumb {
-  --size: 1.4rem;
-  -webkit-appearance: none;
-  background: #000;
-  border: 0;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 8px #fff, 0 0 0 2px #000;
-  cursor: grab;
-  height: var(--size);
-  width: var(--size);
-}
-
-.percentRange::-webkit-slider-thumb {
-  --size: 1.4rem;
-  -webkit-appearance: none;
-  background: #000;
-  border: 0;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 8px #fff, 0 0 0 2px #000;
-  cursor: grab;
-  height: var(--size);
-  width: var(--size);
+  position: relative;
+  z-index: 0;
 }

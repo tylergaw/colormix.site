@@ -25,13 +25,11 @@ const ColorSpaceInput: FunctionComponent = () => {
 
   return (
     <div>
-      <label for="colorspace" class="visually-hidden">
-        Colorspace
-      </label>
+      <label for="colorspace">Color space</label>
       <div class={styles.selectContainer}>
         <select id="colorspace" onChange={onChange} value={state.colorSpace}>
           {colorSpaces.map((space) => (
-            <option value={space}>{`in ${space}`}</option>
+            <option value={space}>{space}</option>
           ))}
         </select>
         <img src="/images/arrow-down.svg" alt="" height="24" width="24" />

@@ -1,9 +1,37 @@
+---
+import ColorInput from "@components/ColorInput";
+import Logo from "./Logo.astro";
+---
+
 <style>
+  header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.4rem 1rem;
+  }
+
   h1 {
-    /* FIXME */
-    display: none;
+    display: flex;
+    flex: 1;
     margin: 0;
+    max-width: 200px;
+  }
+
+  .inputs {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
   }
 </style>
 
-<h1>Colormix</h1>
+<header>
+  <h1>
+    <Logo />
+  </h1>
+
+  <div class="inputs">
+    <ColorInput position={1} client:visible />
+    <ColorInput position={2} client:visible />
+  </div>
+</header>
