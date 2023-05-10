@@ -53,9 +53,9 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
           Color {position}
         </label>
         <div class={`${styles.fieldContainer} ${styles.colorFieldContainer}`}>
-          <div class={styles.colorInputContainer}>
+          <div class={styles.colorPickerContainer}>
             <div
-              class={styles.colorInputVisual}
+              class={styles.colorPickerVisual}
               style={{ backgroundColor: color }}
             />
             <input
@@ -75,11 +75,11 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
         </div>
       </div>
 
-      <div class={styles.control}>
+      <div class={`${styles.control} ${styles.mixPercentControl}`}>
         <label class="visually-hidden" for={`color-input-${position}-percent`}>
           Color {position} Mix Percentage
         </label>
-        <div class={`${styles.fieldContainer} ${styles.percentFieldContainer}`}>
+        <div class={styles.fieldContainer}>
           <div class={styles.percentInputContainer}>
             <input
               class={styles.percentInput}

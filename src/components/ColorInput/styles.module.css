@@ -4,26 +4,25 @@
   flex-wrap: wrap;
 }
 
-.control {
-  flex: 1;
-}
-
-.fieldContainer input:focus {
-  outline: none;
-}
-
 .colorFieldContainer {
   --input-size: 1.875rem;
   align-items: center;
   display: flex;
 }
 
-.colorInputContainer {
+.colorPickerContainer {
   margin-right: 0.25rem;
   position: relative;
 }
 
-.colorInputContainer input {
+.colorPickerVisual {
+  border-radius: calc(var(--input-size) / 2);
+  height: var(--input-size);
+  position: absolute;
+  width: var(--input-size);
+}
+
+.colorPickerContainer input {
   appearance: none;
   cursor: pointer;
   margin: 0;
@@ -33,9 +32,6 @@
   width: var(--input-size);
 }
 
-.colorInputVisual {
-  border-radius: calc(var(--input-size) / 2);
-  height: var(--input-size);
-  position: absolute;
-  width: var(--input-size);
+.mixPercentControl {
+  padding-left: 1rem;
 }

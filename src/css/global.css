@@ -54,9 +54,10 @@ body {
 [type="text"],
 [type="number"],
 select {
+  --color-border: transparent;
   appearance: none;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
     monospace;
@@ -64,10 +65,14 @@ select {
   padding: 0.3em;
 }
 
-/*FIXME [type="text"]:hover,
+[type="text"]:hover,
 [type="number"]:hover {
+  --color-border: #d8d8d8;
 }
 
 [type="text"]:focus,
-[type="number"]:focus {
-} */
+[type="number"]:focus,
+select:focus {
+  --color-border: #0058dc;
+  outline: 1px solid var(--color-border);
+}
