@@ -48,11 +48,11 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
 
   return (
     <div class={styles.container}>
-      <div class={styles.control}>
+      <div>
         <label class="visually-hidden" for={`color-input-${position}`}>
           Color {position}
         </label>
-        <div class={`${styles.fieldContainer} ${styles.colorFieldContainer}`}>
+        <div class={styles.colorFieldContainer}>
           <div class={styles.colorPickerContainer}>
             <div
               class={styles.colorPickerVisual}
@@ -71,27 +71,25 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
             onInput={updateStore}
             value={color.toUpperCase()}
             id={`color-input-${position}`}
+            size={15}
           />
         </div>
       </div>
 
-      <div class={`${styles.control} ${styles.mixPercentControl}`}>
+      <div class={styles.mixPercentControl}>
         <label class="visually-hidden" for={`color-input-${position}-percent`}>
           Color {position} Mix Percentage
         </label>
-        <div class={styles.fieldContainer}>
-          <div class={styles.percentInputContainer}>
-            <input
-              class={styles.percentInput}
-              type="number"
-              name="percentage"
-              onInput={updateStore}
-              value={percentage}
-              min="0"
-              max="100"
-              id={`color-input-${position}-percent`}
-            />
-          </div>
+        <div>
+          <input
+            type="number"
+            name="percentage"
+            onInput={updateStore}
+            value={percentage}
+            min="0"
+            max="100"
+            id={`color-input-${position}-percent`}
+          />
         </div>
       </div>
     </div>

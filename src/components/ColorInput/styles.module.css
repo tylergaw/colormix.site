@@ -2,7 +2,7 @@
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  max-width: 480px;
+  max-width: 460px;
 }
 
 .colorFieldContainer {
