@@ -80,7 +80,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
         <label class="visually-hidden" for={`color-input-${position}-percent`}>
           Color {position} Mix Percentage
         </label>
-        <div>
+        <div class={styles.mixPercentField}>
           <input
             type="number"
             name="percentage"
@@ -90,6 +90,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
             max="100"
             id={`color-input-${position}-percent`}
           />
+          <span>%</span>
         </div>
       </div>
     </div>

@@ -36,3 +36,20 @@
 .mixPercentControl {
   padding-left: 1rem;
 }
+
+.mixPercentField,
+.mixPercentField input {
+  position: relative;
+}
+
+.mixPercentField input {
+  text-align: right;
+  z-index: 1;
+}
+
+.mixPercentField span {
+  left: -1.2rem;
+  pointer-events: none;
+  position: relative;
+  z-index: 0;
+}
