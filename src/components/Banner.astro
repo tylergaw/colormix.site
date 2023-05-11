@@ -1,6 +1,7 @@
 ---
 import ColorInput from "@components/ColorInput";
 import Logo from "./Logo.astro";
+import { Icon } from "astro-icon";
 ---
 
 <style>
@@ -23,8 +24,17 @@ import Logo from "./Logo.astro";
     display: flex;
     flex: 1;
     flex-wrap: wrap;
-    gap: 1rem 4rem;
+    gap: 1rem 3rem;
     max-width: fit-content;
+  }
+
+  [astro-icon] {
+    height: 30px;
+    width: 30px;
+  }
+
+  [astro-icon="switch-access-shortcut"] {
+    transform: translate(-2.5rem, 0.15rem) rotate(-45deg) scaleX(-1);
   }
 </style>
 
@@ -35,6 +45,8 @@ import Logo from "./Logo.astro";
 
   <div class="inputs">
     <ColorInput position={1} client:visible />
+    <Icon pack="mdi" name="add" />
     <ColorInput position={2} client:visible />
+    <Icon name="switch-access-shortcut" />
   </div>
 </header>
