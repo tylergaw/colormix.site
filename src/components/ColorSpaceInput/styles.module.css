@@ -17,7 +17,7 @@ label {
   padding-right: 2rem;
 }
 
-.selectContainer img {
+.selectContainer svg {
   pointer-events: none;
   position: absolute;
   right: 0.5rem;

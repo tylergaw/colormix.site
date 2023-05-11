@@ -24,13 +24,19 @@
   width: 100%;
 }
 
-.snippetDisplay {
-  display: block;
-  font-size: 1.25rem;
-  padding: 0.5em;
-  width: 100%;
+.snippetContainer {
+  display: flex;
+  padding: 0.5rem 0;
+  column-gap: 0.25rem;
 }
 
-.snippetContainer {
-  padding: 0.5rem 0;
+.snippetContainer svg {
+  min-width: 30px;
+  transform: rotate(-48deg) translateY(0.25rem);
+}
+
+.snippetDisplay {
+  flex: 1;
+  font-size: 1.25rem;
+  padding: 0.5em;
 }
