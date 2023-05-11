@@ -71,7 +71,7 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
             onInput={updateStore}
             value={color.toUpperCase()}
             id={`color-input-${position}`}
-            size={15}
+            size={10}
           />
         </div>
       </div>
@@ -82,12 +82,14 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
         </label>
         <div class={styles.mixPercentField}>
           <input
+            class={styles.mixPercentInput}
             type="number"
             name="percentage"
             onInput={updateStore}
             value={percentage}
-            min="0"
-            max="100"
+            size={3}
+            min={0}
+            max={100}
             id={`color-input-${position}-percent`}
           />
           <span>%</span>
