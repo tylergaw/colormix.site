@@ -1,30 +1,16 @@
 import { FunctionComponent } from "preact";
-import { useEffect, useState } from "preact/hooks";
-import store from "../store.ts";
 
-const initialState = store.get();
+interface IProps {
+  colorInput1: string;
+  colorInput2: string;
+  colorOutput: string;
+}
 
-const getNextState = (values) => ({
-  colorInput1: encodeURIComponent(values[1].value),
-  colorInput2: encodeURIComponent(values[2].value),
-  colorOutput: encodeURIComponent(values.outputSnippet),
-});
-
-const Favicon: FunctionComponent = () => {
-  const [isListening, setIsListening] = useState(false);
-  const [state, setState] = useState(getNextState(initialState));
-  const { colorInput1, colorInput2, colorOutput } = state;
-
-  useEffect(() => {
-    if (!isListening) {
-      store.listen((newValues) => {
-        setState(getNextState(newValues));
-      });
-
-      setIsListening(true);
-    }
-  });
-
+const Favicon: FunctionComponent<IProps> = ({
+  colorInput1,
+  colorInput2,
+  colorOutput,
+}) => {
   return (
     <link
       rel="icon"
