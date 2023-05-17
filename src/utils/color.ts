@@ -1,3 +1,5 @@
+import type { InitialState as IStoreShape, IColor } from "../store.ts";
+
 /**
  * Determine if a given string is a valid hex color
  *
@@ -43,4 +45,29 @@ export const getRandomHexColor = (): string => {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
+};
+
+const buildColor = (color: IColor, forDisplay?: boolean): string => {
+  const { value, percentage } = color;
+  const showPercentage = forDisplay && percentage < 1 ? false : true;
+  return `${value.toUpperCase()}${showPercentage ? ` ${percentage}%` : ""}`;
+};
+
+interface ISnippet {
+  display: string;
+  use: string;
+}
+
+export const getOutputSnippet = (state: IStoreShape): ISnippet => {
+  const color1 = state["1"];
+  const color2 = state["2"];
+  const display = `color-mix(in ${state.colorSpace}, ${buildColor(
+    color1,
+    true
+  )}, ${buildColor(color2, true)})`;
+  const use = `color-mix(in ${state.colorSpace}, ${buildColor(
+    color1
+  )}, ${buildColor(color2)})`;
+
+  return { display, use };
 };

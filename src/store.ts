@@ -1,5 +1,5 @@
 import { map } from "nanostores";
-import { getRandomHexColor } from "@utils/color";
+import { getOutputSnippet, getRandomHexColor } from "@utils/color";
 
 export interface IColor {
   value: string;
@@ -8,6 +8,7 @@ export interface IColor {
 
 export interface InitialState {
   colorSpace: string;
+  outputSnippet: string;
   1: IColor;
   2: IColor;
   [key: number]: IColor;
@@ -25,8 +26,9 @@ export const colorSpaces: string[] = [
   "xyz",
 ];
 
-const store = map<InitialState>({
+const defaults = {
   colorSpace: "oklab",
+  outputSnippet: "",
   1: {
     value: getRandomHexColor(),
     percentage: 50,
@@ -35,6 +37,11 @@ const store = map<InitialState>({
     value: getRandomHexColor(),
     percentage: 50,
   },
+};
+
+const store = map<InitialState>({
+  ...defaults,
+  outputSnippet: getOutputSnippet(defaults).use,
 });
 
 export default store;

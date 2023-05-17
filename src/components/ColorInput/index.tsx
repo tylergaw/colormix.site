@@ -27,8 +27,11 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
     }
   });
 
+  // NOTE: This function feels like it's doing way dumb stuff, there has to
+  // be a better way to rangle each value.
   const updateStore = (e: Event) => {
-    let { name, value: nextValue } = e.target as HTMLInputElement;
+    let { name, value } = e.target as HTMLInputElement;
+    let nextValue: string | number = value;
 
     // We need to guard a here to allow for typing in a color value. We only
     // want to update the store when we hit a valid 3 or 6 digit hex
@@ -36,6 +39,10 @@ const ColorInput: FunctionComponent<IProps> = ({ position }: IProps) => {
       if (!isHex(nextValue)) {
         return false;
       }
+    }
+
+    if (name === "percentage") {
+      nextValue = parseInt(nextValue, 10);
     }
 
     const nextState: IColor = {

@@ -1,4 +1,6 @@
 ---
+import DynamicStyle from "@components/DynamicStyle";
+import Funicon from "@components/Funicon.astro";
 import "../css/global.css";
 ---
 
@@ -8,10 +10,11 @@ import "../css/global.css";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Visualize the CSS color-mix function" />
-    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
     <title>CCS color-mix visualized</title>
+    <Funicon />
   </head>
   <body>
+    <DynamicStyle client:only />
     <slot />
   </body>
 </html>
