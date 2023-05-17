@@ -1,6 +1,5 @@
 import { FunctionComponent } from "preact";
 import { useEffect, useState } from "preact/hooks";
-import Favicon from "@components/Favicon";
 import store from "../store.ts";
 
 const initialState = store.get();
@@ -18,6 +17,8 @@ const DynamicStyle: FunctionComponent = () => {
     colorInput2: encodeURIComponent(colorInput2),
     colorOutput: encodeURIComponent(colorOutput),
   };
+
+  window["updateFavicon"](faviconProps);
 
   useEffect(() => {
     if (!isListening) {
@@ -40,7 +41,6 @@ const DynamicStyle: FunctionComponent = () => {
         }
         `}
       </style>
-      <Favicon {...faviconProps} />
     </>
   );
 };
