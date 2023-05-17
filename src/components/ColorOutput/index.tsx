@@ -45,6 +45,8 @@ const ColorOutput: FunctionComponent = () => {
 
       setIsListening(true);
     }
+
+    store.setKey("outputSnippet", snippetUse);
   });
 
   return (
