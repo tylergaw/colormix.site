@@ -8,6 +8,7 @@ export interface IColor {
 
 export interface InitialState {
   colorSpace: string;
+  outputSnippet: string;
   1: IColor;
   2: IColor;
   [key: number]: IColor;
@@ -27,6 +28,7 @@ export const colorSpaces: string[] = [
 
 const store = map<InitialState>({
   colorSpace: "oklab",
+  outputSnippet: "",
   1: {
     value: getRandomHexColor(),
     percentage: 50,
